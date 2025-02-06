@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<head>
+
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .check {
+      display: inline-block;
+    }
+    
+  </style>
+
+</head>
+
+<form method="post" enctype="multipart/form-data">
+  <div>
+    <label for="rinex">Raw RINEX data</label>
+    <input
+      type="file"
+      id="rinex"
+      name="rinex"
+      accept = ".Cmn"
+    />
+  </div>
+
+  <div>
+    <label for="bz">Bz data</label>
+    <input
+      type="file"
+      id="bz"
+      name="bz"
+      accept=".asc"
+    />
+  </div>
+
+  <div>
+    <label for="ae">AE data</label>
+    <input
+      type="file"
+      id="ae"
+      name="ae"
+      accept=".txt"
+    />
+  </div>
+
+  <div>
+    <label for="sym">SYM/ASY data</label>
+    <input
+      type="file"
+      id="sym"
+      name="sym"
+      accept=".txt"
+    />
+  </div>
+
+  <br>
+
+  <div>
+    <label for ='doysdoye'>DoYs DoYe |example: 01.01.2000|</label>
+    <input name = 'doysdoye' type = 'text'> <br>
+  
+    <label for ='timeproti'>Time Point ROTI</label>
+    <input name = 'timeproti'type = 'text' value = '20:00:00'> <br>
+  
+    <label for ='tstart'>Time Start</label>
+    <input name = 'tstart' type = 'text' value = '0'> <br>
+  
+    <label for ='tend'>Time End</label>
+    <input name = 'tend' type = 'text' value = '24'> <br>
+  
+    <label for ='elang'>Elevation Angle For Mask</label>
+    <input name = 'elang' type = 'text' value = '30'> <br>
+  
+    <label for ='satnum'>Satellite Number |0 if no need|</label>
+    <input name = 'satnum' type = 'text' value = '0'> <br>
+  
+    <label for ='winmin'>Window Size In Minutes</label>
+    <input name = 'winmin' type = 'text' value = '10'> <br>
+  
+    <label for ='winlat'>Window Size In Latitude</label>
+    <input name = 'winlat' type = 'text' value = '30'> <br>
+  
+    <label for ='kp'>Kp-index</label>
+    <input name = 'kp' type = 'text' value = '8'> <br>
+  
+    <label for ='wn'>Wn |critical frequency| for filtering</label>
+    <input name = 'wn' type = 'text' value = '0.033'> <br>
+
+  </div> 
+
+  <br>
+
+  <div class ='check'>
+    <input type="checkbox" id="option1" name="options" value="TEC">
+    <label for="option1">TEC graph</label>
+  </div>
+
+  <div class = 'check'>
+    <input type="checkbox" id="option2" name="options" value="SPEC">
+    <label for="option2">Spectrogram graph</label>
+  </div>
+
+  <div class = 'check'>
+    <input type="checkbox" id="option3" name="options" value="KEO">
+    <label for="option2">Keogram</label>
+  </div>
+
+  <div class = 'check'>
+    <input type="checkbox" id="option4" name="options" value="DEC">
+    <label for="option2">Decimation</label>
+  </div>
+
+  <div class = 'check'>
+    <input type="checkbox" id="option5" name="options" value="WT">
+    <label for="option2">Wavelet scaleogram</label>
+  </div>
+
+  <div class = 'check'>
+    <input type="checkbox" id="option6" name="options" value="SFFT">
+    <label for="option2">SFFT spectrogram</label>
+  </div>
+
+  <div class = 'check'>
+    <input type="checkbox" id="option7" name="options" value="SAVE">
+    <label for="option2">Save data</label>
+  </div>
+
+  <div class = 'check'>
+    <input type="checkbox" id="option8" name="options" value="PROTI">
+    <label for="option2">Point ROTI</label>
+  </div>
+
+  <div class = 'check'>
+    <input type="checkbox" id="option9" name="options" value="ROTI">
+    <label for="option2">ROTI graph</label>
+  </div>
+
+  <div>
+    <label for = "filters">Choose Filter </label>
+    <select name = 'filt' id = 'filt-select'>
+      <option value = 'none'>None</option>
+      <option value = 'butter'>Butter</option>
+      <option value = 'cheby'>Chebyshev</option>
+      <option value = 'remez'>Remez</option>
+      <option value = 'firwin'>Firwin</option>
+      <option value = 'decimation'>Decimation</option>
+    </select>
+  </div>  
+
+  <br>
+  
+  <div>
+    <button type = "submit">Submit</button>
+  </div>
+
+</form>
